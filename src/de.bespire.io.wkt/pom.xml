@@ -222,6 +222,12 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-1.2-api</artifactId>
+			<version>2.13.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.eclipse.xtext</groupId>
 			<artifactId>org.eclipse.xtext.junit4</artifactId>
 			<version>${xtextVersion}</version>
@@ -237,6 +243,12 @@
 			<groupId>org.eclipse.xtext</groupId>
 			<artifactId>org.eclipse.xtext</artifactId>
 			<version>${xtextVersion}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.xtext</groupId>
@@ -257,6 +269,10 @@
 				<exclusion>
 					<artifactId>org.eclipse.equinox.common</artifactId>
 					<groupId>org.eclipse.platform</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
 				</exclusion>
 			</exclusions>
 			<optional>true</optional>
